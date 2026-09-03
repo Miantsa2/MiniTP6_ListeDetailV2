@@ -26,15 +26,14 @@ class ProduitsViewModel : ViewModel() {
     // -----------------------------------------------------------------------
     // TODO 1 — L'ÉTAT : remplacez la ligne provisoire ci-dessous par le duo :
     //
-    //   private val _uiState = MutableStateFlow(EtatUi(produits = produits))
-    //   val uiState: StateFlow<EtatUi> = _uiState
+       private val _uiState = MutableStateFlow(EtatUi(produits = produits))
+            val uiState: StateFlow<EtatUi> = _uiState
     //
     // Pourquoi un duo ? Le _uiState privé est MUTABLE : seul le ViewModel
     // a le droit d'écrire. Le uiState public est en LECTURE SEULE : l'UI
     // ne fait qu'observer. C'est le flux unidirectionnel du cours.
     // -----------------------------------------------------------------------
-    val uiState: StateFlow<EtatUi> =
-        MutableStateFlow(EtatUi(produits = produits))   // provisoire : figé
+
 
     /** Appelée par l'écran de détail quand l'utilisateur ajoute au panier. */
     fun ajouterAuPanier(poidsKg: Int) {
@@ -42,9 +41,9 @@ class ProduitsViewModel : ViewModel() {
         // TODO 2 — L'ÉVÉNEMENT (à faire APRÈS le TODO 1) :
         // faites évoluer l'état de façon immuable, avec copy (séance 1) :
         //
-        //   _uiState.update { etat ->
-        //       etat.copy(poidsPanierKg = etat.poidsPanierKg + poidsKg)
-        //   }
+           _uiState.update { etat ->
+               etat.copy(poidsPanierKg = etat.poidsPanierKg + poidsKg)
+           }
         //
         // L'état change -> le StateFlow émet -> l'écran qui l'observe
         // se recompose. Personne n'a « mis à jour l'écran ».

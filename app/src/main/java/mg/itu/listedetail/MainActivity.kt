@@ -54,7 +54,7 @@ val produits = listOf(
 // ÉTAPE 3 — CASSER LE FLUX : cette variable vit HORS du circuit
 // état -> observation -> recomposition. Décommentez-la avec le bloc
 // « triche » de EcranDetail, et observez.
-// var poidsTriche = 0
+var poidsTriche = 0
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -170,11 +170,11 @@ fun EcranDetail(
         // ÉTAPE 3 — CASSER LE FLUX : décommentez ce bloc (et la variable
         // poidsTriche en haut du fichier), puis cliquez sur ce bouton.
         // Qu'affiche le texte ? Pourquoi ? (Voir l'énoncé.)
-        // Spacer(Modifier.height(16.dp))
-        // Text("Triche : $poidsTriche kg (hors circuit)")
-        // Button(onClick = { poidsTriche++ }) {
-        //     Text("Ajouter 1 kg (hors circuit)")
-        // }
+         Spacer(Modifier.height(16.dp))
+         Text("Triche : $poidsTriche kg (hors circuit)")
+         Button(onClick = { poidsTriche++ }) {
+             Text("Ajouter 1 kg (hors circuit)")
+         }
 
         Spacer(Modifier.height(24.dp))
         Button(onClick = onRetour) { Text("Retour à la liste") }
