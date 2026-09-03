@@ -1,0 +1,24 @@
+# Android / Gradle
+.gradle/
+gradle/
+build/
+**/build/
+build.gradle.kts
+gradlew
+gradlew.bat
+settings.gradle.kts
+
+
+# Android Studio
+.idea/
+*.iml
+
+# Local configuration
+local.properties
+
+# Kotlin
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
